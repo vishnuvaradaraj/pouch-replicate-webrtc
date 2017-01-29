@@ -28,8 +28,8 @@
   ],
   "dependencies": {
     "concat-stream": "^1.5.0",
-    "pouchdb": "5.0.0",
-    "pouchdb-replication-stream": "1.2.5",
+    "pouchdb": "^6.1.0",
+    "pouchdb-replication-stream": "^1.2.9",
     "promise": "^7.0.1",
     "replicate-common": "0.0.5",
     "typedarray-to-buffer": "^3.0.3"

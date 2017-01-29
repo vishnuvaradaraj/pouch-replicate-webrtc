@@ -70,7 +70,7 @@ PouchReplicator.prototype.replicate = function() {
     database += line;
   });
 
-  var p = self.pouchDb.dump(concatStream)
+  var p = self.pouchDb.dump(concatStream, self.replicationOptions)
   .then(function() {
     self.streams.forEach(function(s) {
       s.write(database);
