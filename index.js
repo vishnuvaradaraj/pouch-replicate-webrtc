@@ -62,7 +62,7 @@ PouchReplicator.prototype.receiveData = function(chunk) {
  * Start PouchDB replication
  @ @return  {Promise}
  */
-PouchReplicator.prototype.replicate = function() {
+PouchReplicator.prototype.replicate = function(options) {
   var self = this;
 
   var database = '';
@@ -70,7 +70,7 @@ PouchReplicator.prototype.replicate = function() {
     database += line;
   });
 
-  var p = self.pouchDb.dump(concatStream, self.replicationOptions)
+  var p = self.pouchDb.dump(concatStream, options)
   .then(function() {
     self.streams.forEach(function(s) {
       s.write(database);
